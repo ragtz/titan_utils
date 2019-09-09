@@ -63,7 +63,7 @@ def pick_gpu_lowest_memory(idx):
     return best_gpu
 
 def pick_titan_lowest_mean_memory(s_idx=1, e_idx=15):
-    mean_memory_map = [(np.mean(gpu_memory_map(idx).values()), idx) for idx in range(s_idx, e_idx+1)]
+    mean_memory_map = [(np.mean(list(gpu_memory_map(idx).values())), idx) for idx in range(s_idx, e_idx+1)]
     best_memory, best_titan = sorted(mean_memory_map)[0]
     return best_titan
 
